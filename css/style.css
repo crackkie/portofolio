@@ -2,6 +2,10 @@
 html{
     scroll-behavior: smooth;
 }
+
+body::-webkit-scrollbar {
+    display: none;
+}
 body{
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
@@ -26,6 +30,10 @@ header{
     display: grid;
     justify-content: center;
     z-index: 999;
+    transition: background-color 0.5s ease-in-out;
+}
+header.scroled{
+    background-color: #000000;
 }
 .image img{
     width: 100%;
@@ -78,7 +86,7 @@ header{
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 100%; /* Tinggi efek gradasi */
+    height: 100%;
     background: linear-gradient(to top, #010101 10%, transparent);
 }
 .greeting{
@@ -288,130 +296,29 @@ header{
     height: 100%;
 }
 /* contact */
-.contact{
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.form{
-    width: 100%;
-    height: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 2rem;
-    gap: 1rem;
 
-}
-.form-box{
-        width: 100%;
-        height: 100%;
-        min-height: 400px;
-        padding: 1.5rem;
-        background-color: #1f1f1f;
-        border-radius: 8px;
-}
-.form-box p{
-        margin: 0;
-}
-.message-box{
+
+/* footer */
+footer{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 1rem;
+    align-items: center;
     width: 100%;
-    height: 100%;
-    padding: 1.5rem;
-    background-color: #1f1f1f;
-    border-radius: 8px;
-    min-height: 400px;
-
+    height: 50vh;
+    background-color: #eaeaea;
+    gap: 3rem;
 }
-.message-box h1,.form-box h1{
-    margin: 0;
-}
-#fname,#fbirth{
-    width: 100%;
-    padding: 0.5rem 1rem;
-    border-radius: 8px;
-    border: none;
-    }
-#message{
-    width: 100%;
-    height: 100px;
-    border-radius: 8px;
-    border: none;
-    resize: none;
-    padding: 0.5rem 1rem;
-}
-#submit{
-    width: 100%;
-    padding: 0.5rem;
-    font-weight: bold;
-    border-radius: 8px;
-    border: none;
-}
-#submit:hover{
-    background-color: #333;
-    color: white;
-}
-.message-box #time{
-    margin: 0;
-    line-height: 2px;
-    font-size: 0.8rem;
-    line-height: 10px;
-    font-size: 0.7rem;
-    width: 100%;
-}
-.message-display{
-    margin-top: 1rem;
-    padding: 5px;
-    margin: 0;
-    font-weight: 600;
-    background-color: whitesmoke;
+footer p{
+    text-align: center;
     color: #000000;
-    border-radius: 8px;
-    
-}
-.message-display #message-container{
-    margin: 0;
-}
-.alert{
-    position: relative;
-    width: 100%;
-    margin: 0;
-    text-align: center;
-    background-color: red;
-    z-index: 999;
-}
-.doneNotify{
-
-    position: relative;
-    width: 100%;
-    margin: 0;
-    text-align: center;
-    background-color: rgb(0, 154, 0);
-    z-index: 99;
-}
-/* footer */
-footer{
-    width: 100%;
-    height: 10vh;
-    /* padding: 1.5rem; */
-    background-color: aliceblue;
-}
-.footer p{
-    text-align: center;
-    color: #ffffff;
+    font-weight: bold;
 }
 .social{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     width: 100%;
-    height: 100%;
     list-style: none;
 }
 .social .icon{
@@ -431,7 +338,6 @@ footer{
 }
 .refrensi ul{
     padding: 0;
-    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -439,55 +345,25 @@ footer{
     list-style: none;
     gap: .2rem;
     padding-bottom: 1rem;
-    /* border: 2px solid; */
 }
 
 @media (max-width: 480px){
     .slider::after{
         background: linear-gradient(to top, #010101 30%, transparent);
         height: 100%;
-    }
-    .greeting{
-        top: 60%;
-        left: 2rem;
-        padding: 0;
-    }
-    .greeting h4{
-        font-size: 1.5rem;
-    }
-    .greeting h1{
-        font-size: 2.5rem;
-    }
-    .popup{
-        top: -60%;
-        left: 25%;
-        width: 50%;
-        height: 30%;
-    }
-    .popup h2{
-        font-size: .8rem;
-    }
-    .popup h1{
-        font-size: 1rem;
+    } 
+    .about{
+        width: 100%;
+        flex-direction: column;
+        height: 200vh;
     }
     .aboutme{
         flex-direction: column;
         justify-content: center;
         align-items: center;
     }
-    .about{
-        width: 100%;
-        flex-direction: column;
-        height: 200vh;
-    }
     .aboutme h2{
         font-size: 1.5rem;
-    }
-    .form{
-        flex-direction: column;
-    }
-    .contact{
-        height: auto;
     }
     .profile p{
         font-size: 1rem;
